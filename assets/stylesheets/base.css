@@ -10,3 +10,27 @@
   max-width: 9rem;
   border-radius: 50%;
 }
+
+
+.photos {
+  flex-direction: column;
+  width: 100%;
+}
+
+#childhood img {
+  height: auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  #childhood .photos {
+    flex-direction: row;
+    width: auto;
+  }
+
+  #childhood img {
+    height: 100%;
+    width: auto;
+  }
+  
+}
