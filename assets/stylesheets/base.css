@@ -1,0 +1,12 @@
+.color.blue:before {
+  background-color: blue;
+}
+
+.color.pink:before {
+  background-color: rgb(221, 42, 72);
+}
+
+.avatar {
+  max-width: 9rem;
+  border-radius: 50%;
+}
