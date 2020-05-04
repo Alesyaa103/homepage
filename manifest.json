@@ -1,0 +1,16 @@
+{
+  "short_name": "AA",
+  "name": "Alesya Afanaseva",
+  "icons": [
+    {
+      "src": "homepage/assets/images/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "white",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "white"
+}
