@@ -48,28 +48,15 @@
 </head>
 
 <body>
-  <dialog id="childhood">
-    <a href="/" title="Hide childhood photos" class="close">Close</a>
-    <div class="photos">
-      <noscript>
-        <img src="./assets/photos/2.jpg" alt="Me and rubber pig">
-        <img src="./assets/photos/1.jpg" alt="Me and buckwheat">
-        <img src="./assets/photos/3.jpg" alt="Me and my mom">
-        <img src="./assets/photos/4.jpg" alt="Me and my father">
-        <img src="./assets/photos/5.jpg" alt="Me and teddy bear">
-        <img src="./assets/photos/6.jpg" alt="Me on the throne">
-      </noscript>
-    </div>
-  </dialog>
   <header>
     <div class="credits">Хорошего дня! Спасибо за внимание</div>
   </header>
   <main>
     <div class="unicorn">
-      <img src="../assets/images/unicorn.svg" alt="unicorn1">
-      <img src="../assets/images/unicorn.svg" alt="unicorn2">
-      <img src="../assets/images/unicorn.svg" alt="unicorn3">
-      <img src="../assets/images/unicorn.svg" alt="unicorn4">
+      <img src="./assets/images/unicorn.svg" alt="unicorn1">
+      <img src="./assets/images/unicorn.svg" alt="unicorn2">
+      <img src="./assets/images/unicorn.svg" alt="unicorn3">
+      <img src="./assets/images/unicorn.svg" alt="unicorn4">
     </div>
     <article>
       <div class="page" style="border-color: rgb(227, 204, 255);">
@@ -154,6 +141,17 @@
               <div class="fat divider"></div>
             </div>
           </div>
+          <dialog id="childhood">
+            <span class="close">Close</span>
+            <div class="photos">
+              <img src="./assets/photos/2.jpg" alt="Me and rubber pig">
+              <img src="./assets/photos/1.jpg" alt="Me and buckwheat">
+              <img src="./assets/photos/3.jpg" alt="Me and my mom">
+              <img src="./assets/photos/4.jpg" alt="Me and my father">
+              <img src="./assets/photos/5.jpg" alt="Me and teddy bear">
+              <img src="./assets/photos/6.jpg" alt="Me on the throne">
+            </div>
+          </dialog>
           <div class="row">
             <div class="ten wide column">
               <section>
@@ -347,28 +345,16 @@
       this.childNodes[2].play();
     });
 
-    var childhoodPhotos = document.getElementById("childhood").getElementsByClassName("photos")[0];
-    document.getElementById("resume").addEventListener("click", function () {
-      callFuncOnCollection(childhoodPhotos.getElementsByTagName("NOSCRIPT"), replaceNoscript);
-    });
+    let mainContent = document.getElementsByClassName('row')[2];
+    let childhoodPhotos = document.getElementById("childhood");
 
-    function callFuncOnCollection(collection, func) {
-      Array.prototype.slice.call(collection).map(function (item) {
-        func(item);
-      });
-    }
+    document.querySelector('.close').addEventListener('click', switchContent)
 
-    function replaceNoscript(noscript) {
-      var parent = noscript.parentElement;
-      Array.prototype.slice.call((new DOMParser()).parseFromString(noscript.textContent, "text/html").body.children)
-        .forEach(function (element) {
-          parent.insertBefore(element, noscript);
-        });
-      parent.removeChild(noscript);
-    }
+    document.getElementById("resume").addEventListener("click", switchContent);
 
-    if (window.location.hash === "#childhood") {
-      callFuncOnCollection(childhoodPhotos.getElementsByTagName("NOSCRIPT"), replaceNoscript);
+    function switchContent() {
+      mainContent.classList.toggle('hide');
+      childhoodPhotos.classList.toggle('active');
     }
   </script>
 </body>
