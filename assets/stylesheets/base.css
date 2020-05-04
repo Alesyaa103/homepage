@@ -1,0 +1,89 @@
+.color.blue:before {
+  background-color: blue;
+}
+
+.color.orange:before {
+  background-color: orange;
+}
+
+.avatar {
+  max-width: 9rem;
+  border-radius: 50%;
+}
+
+main{
+  background-color: rgb(227, 204, 255);
+}
+
+.photos {
+  flex-direction: column;
+  width: 100%;
+}
+
+#childhood img {
+  height: auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  #childhood .photos {
+    flex-direction: row;
+    width: auto;
+  }
+
+  #childhood img {
+    height: 100%;
+    width: auto;
+  }
+
+  ::-webkit-scrollbar {
+    height: 18px;
+    background-color: #bcd3ec;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(227, 204, 255);
+    border-radius: 9em;
+    box-shadow: inset 3px 3px 10px #456355;
+  }
+
+  .unicorn img{
+    position: absolute;
+    left: -80px;
+    width: 80px;
+    height: 80px;
+    animation: unicorn 12s infinite linear;;
+  }
+
+  img[alt="unicorn2"] {
+    animation-delay: 3s;
+  }
+  img[alt="unicorn3"] {
+    animation-delay: 6s;
+  }
+  img[alt="unicorn4"] {
+    animation-delay: 9s;
+  }
+  @keyframes unicorn {
+    0% {
+      left: 0px;
+      top:100px;
+      transform: rotate(45deg);
+    }
+    25% {
+      left: 25%;
+      top: 10px;
+      transform: rotate(0deg);
+    }
+    75% {
+      left: 75%;
+      top:50px;
+      transform: rotate(-45deg);
+    }
+    100% {
+      left: 100%;
+      top: 10px;
+      transform: rotate(0deg);
+    }
+  }
+}
